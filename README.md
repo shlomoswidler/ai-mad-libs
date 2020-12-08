@@ -11,7 +11,7 @@ $ cat source.txt
 O say can you see, by the dawn's early light, what so proudly we hailed at the twilight's last gleaming?
 
 $ # create the dictionary from the recipe
-$ # grammify.sh pancakeRecipe.txt | awk -f dictionarize.awk > dict.txt
+$ # grammify.sh pancakeRecipe.txt | awk -f dictionarize.awk - > dict.txt
 
 $ # generate the mad libs
 $ # grammify.sh source.txt > grammified.txt
