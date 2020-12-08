@@ -99,7 +99,7 @@ Outputs a `template`.
 #### Tip:
 madness level 2 seems to work well for most texts, keeping enough of the original and still allowing room for humor.
 ## `template` format
-A `template` represents the position of the part od speech within the source text and the word that should be placed there. When it only contains blanks, it looks like this:
+A `template` represents the position of the part of speech within the source text and the word that should be placed there. When it only contains blanks, it looks like this:
 ```
 <template>
 24 : pronoun
