@@ -1,44 +1,25 @@
 O : exclamation
-  : stet
 say : verb
-  : stet
-can : verb
-  : stet
-you : pronoun
-  : stet
+can : stet
+you : stet
 see : verb
 , : stet
-  : stet
 by : preposition
-  : stet
-the : article
-  : stet
-dawn : noun
+the : stet
+dawn : noun (singular)
 's : stet
-  : stet
 early : adjective
-  : stet
-light : noun
+light : noun (singular)
 , : stet
-  : stet
-what : pronoun
-  : stet
+what : stet
 so : adverb
-  : stet
 proudly : adverb
-  : stet
-we : pronoun
-  : stet
-hailed : verb past tense
-  : stet
+we : stet
+hailed : past tense verb
 at : preposition
-  : stet
-the : article
-  : stet
-twilight : noun
+the : stet
+twilight : noun (singular)
 's : stet
-  : stet
 last : adjective
-  : stet
-gleaming : verb ending in ‘ing’
+gleaming : noun (singular)
 ? : stet
