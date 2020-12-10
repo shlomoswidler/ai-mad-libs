@@ -1,0 +1,35 @@
+CC : stet : coordinating conjunction
+CD : number
+DT : stet : determiner
+EX : stet : existential there (like: 'there is', think of it like 'there exists')
+FW : stet : foreign word
+IN : preposition
+JJ : adjective
+JJR : comparitive adjective : 'bigger'
+JJS : superlative adjective : 'biggest'
+LS : stet : list marker 1)
+MD : stet : modal could, will
+NN : noun (singular) : 'desk'
+NNS : plural noun
+NNP : proper noun (singular) : Harrison
+NNPS : proper noun (plural) : Americans
+PDT : stet : predeterminer 'all the kids'
+POS : stet : possessive ending parent's
+PRP : stet : personal pronoun I, he, she
+PRP$ : stet : possessive pronoun my, his, hers
+RB : adverb
+RBR : comparative adverb : better
+RBS : superlative adverb : best
+RP : stet : particle 'give up'
+TO : preposition : to go 'to' the store
+UH : exclamation : errrrrrrrm
+VB : verb : verb, base form 'take'
+VBD : past tense verb : took
+VBG : verb ending in 'ing' : gerund/present participle taking
+VBN : verb, past participle : taken
+VBP : verb : verb, singular present, non-3d take
+VBZ : verb (3rd person singular, present tense) : takes
+WDT : stet : wh-determiner which
+WP : stet : wh-pronoun who, what
+WP$ : stet : possessive wh-pronoun whose
+WRB : stet : wh-abverb where, when
