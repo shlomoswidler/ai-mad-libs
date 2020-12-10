@@ -8,7 +8,7 @@ Given an arbitrary source text, replace parts of speech with randomly chosen alt
 # Example
 ```
 $ cat source.txt
-O say can you see, by the dawn's early light, what so proudly we hailed at the twilight's last gleaming?
+Oh say can you see, by the dawn's early light, what so proudly we hailed at the twilight's last gleaming?
 
 $ # create the dictionary from the recipe
 $ # grammify.sh pancakeRecipe.txt | awk -f dictionarize.awk - > dict.txt
@@ -18,13 +18,13 @@ $ # grammify.sh source.txt > grammified.txt
 
 $ # note the different madness levels in these examples
 $ awk -f blankify.awk grammified.txt | awk -f adlib.awk dict.txt - | awk -f fill.awk grammified.txt -
-O say can you mix, by the milk's early light, what so carefully we hailed at the twilight's last bubbling?
+Oh say can you mix, by the milk's early light, what so carefully we hailed at the twilight's last bubbling?
 
 $ awk -f blankify.awk madness=5 grammified.txt | awk -f adlib.awk dict.txt - | awk -f fill.awk grammified.txt -
-O say can they serve, on top the sugar's early flour, what so proudly she hailed during the milk's crispy flipping?
+Oh say can they serve, on top the sugar's early flour, what so proudly she hailed during the milk's crispy flipping?
 
 $ awk -f blankify.awk madness=0 grammified.txt | awk -f adlib.awk dict.txt - | awk -f fill.awk grammified.txt -
-O say can you see, by the dawn's early light, what so proudly we hailed at the twilight's last gleaming?
+Oh say can you see, by the dawn's early light, what so proudly we hailed at the twilight's last gleaming?
 
 $ awk -f blankify.awk madness=10 grammified.txt | awk -f adlib.awk dict.txt - | awk -f fill.awk grammified.txt -
 yum mix serve she heat, during the salt's crispy sugar, he carefully immediately they smothered on top the milk's golden bubbling?
