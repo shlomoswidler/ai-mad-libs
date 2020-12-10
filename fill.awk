@@ -26,9 +26,9 @@ BEGIN {
 END { 
 	for (i = 1; i <= elemNum; ++i) {
 		if (i in repl && index(repl[i], "<--") != 1) {
-			printf("%s", repl[i])
+			printf("%s ", repl[i])
 		} else {
-			printf("%s", elem[i])
+			printf("%s ", elem[i])
 		}
 	}
 	print ""
