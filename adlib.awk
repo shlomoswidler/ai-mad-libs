@@ -20,6 +20,7 @@ BEGIN {
 	if (inDict == 1) {
 		ofEach[$1] = split($2, arr, ", ")
 		dict[$1] = $2
+		usedEach[$1] = 0
 	} else {
 		if ($0 == "<template>" || $0 == "</template>") next
 		needEach[$2] = (needEach[$2] + 0) + 1
@@ -30,13 +31,18 @@ END {
 	print "<template>"
 	for (i in res) {
 		needA = res[i]
-		numAvail = split(dict[needA], options, ", ")
-#		print i " chooses from among " numAvail " " needA "s, need " needEach[needA] " of these"
-		do {
-			rn = 1 + int(rand() * numAvail)
-		} while ((needA "_" rn) in used)
-		used[ (needA "_" rn) ] = 1
-		print i " : " options[rn] " : " needA
+		if (needA in dict) {
+			numAvail = split(dict[needA], options, ", ")
+			do {
+				rn = 1 + int(rand() * numAvail)
+			} while (usedEach[needA] < numAvail && (needA "_" rn) in used)
+			used[ (needA "_" rn) ] = 1
+			replacement = options[rn]
+			usedEach[needA] = usedEach[needA] + 1
+		} else {
+			replacement = "<--none in dictionary: " needA "-->"
+		}
+		print i " : " replacement " : " needA
 	}
 	print "</template>"
 }
