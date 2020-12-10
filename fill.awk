@@ -18,7 +18,6 @@ BEGIN {
 	}
 	if (inTemplate == 1) {
 		repl[$1] = $2
-
 	} else {
 		++elemNum
 		elem[elemNum] = $1
@@ -26,7 +25,7 @@ BEGIN {
 }
 END { 
 	for (i = 1; i <= elemNum; ++i) {
-		if (i in repl) {
+		if (i in repl && index(repl[i], "<--") != 1) {
 			printf("%s", repl[i])
 		} else {
 			printf("%s", elem[i])
