@@ -1,4 +1,4 @@
-O : exclamation
+Oh : exclamation
 say : verb
 can : stet
 you : stet
