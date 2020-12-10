@@ -45,10 +45,12 @@ ai-mad-libs consists of five components that are assembled together into several
 ```
 
 ## `source text` format
-The `source text` should not contain any newlines, and should contain only English characters.
+The `source text` should contain English text.
 
-## grammify [TBD]
-[TBD] Converts the `source text` into the `grammified text`. This marks up the text with the parts-of-speech.
+## grammify.ipyb
+Converts the `source text` into the `grammified text`. Writes the `grammified text` to the file `grammified.txt`. 
+
+This marks up the text with the parts-of-speech. The Python [NLTK library](https://nltk.org/) is used to determine the parts of speech. The native NLTK output is more complicated than needed for mad libs, and the parts-of-speech are coded into three-letter terms, so the `nltk-tagsets-pos.txt` file is consulted to translate these NLTK terms into plain English terms, and to signal which parts of speech should be left untouched in the output (i.e., the articles 'a/an/the', punctuation, possessive endings, and foreign words).
 
 ## `grammified text` format
 The `grammified text` looks like this.
