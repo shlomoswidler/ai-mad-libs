@@ -53,27 +53,18 @@ The `source text` should not contain any newlines, and should contain only Engli
 ## `grammified text` format
 The `grammified text` looks like this.
 ```
-O : exclamation
-  : stet
+Oh : exclamation
 say : verb
-  : stet
-can : verb
-  : stet
-you : pronoun
-  : stet
+can : stet
+you : stet
 see : verb
 , : stet
-  : stet
 by : preposition
-  : stet
-the : article
-  : stet
-dawn : noun
+the : stet
+dawn : noun (singular)
 's : stet
-  : stet
 early : adjective
-  : stet
-light : noun
+light : noun (singular)
 ```
 ## dictionarize.awk
 Converts a `grammified text` into a `dictionary`.
@@ -84,11 +75,11 @@ The `dictionary` looks like this. This is an example dictionary created from a h
 <dictionary>
 verb ending in ‘ing’ : flipping, bubbling
 adjective : crispy, golden, tasty
-noun : pancake, eggs, sugar, flour, milk, salt, syrup
+noun (singular) : pancake, eggs, sugar, flour, milk, salt, syrup
 pronoun : he, she, they
 adverb : gently, carefully, immediately
 verb : beat, mix, fry, heat, serve
-verb past tense : browned, mixed, smothered
+past tense verb : browned, mixed, smothered
 preposition : on top, during
 exclamation : yum
 </dictionary>
