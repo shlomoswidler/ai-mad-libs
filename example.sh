@@ -1,9 +1,13 @@
 #! /bin/bash
-# create the dictionary from the recipe
-# grammify.sh pancakeRecipe.txt | awk -f dictionarize.awk > dict.txt
+# generate the grammifier python script
+python ipynb2py.py --input grammify.ipynb
 
-# generate the mad libs
-# grammify.sh source.txt > grammified.txt
+# create the dictionary from the recipe
+# python grammify.py pancakeRecipe.txt | awk -f dictionarize.awk > dict.txt
+
+# invoke the grammifier to tag the parts of speech
+python grammify.py source.txt > grammified.txt
+
 echo "-- default madness level (2)"
 awk -f blankify.awk grammified.txt | awk -f adlib.awk dict.txt - | awk -f fill.awk grammified.txt -
 echo "-- madness level 5"
