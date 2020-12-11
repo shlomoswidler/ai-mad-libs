@@ -22,16 +22,16 @@ $ python grammify.py source.txt > grammified.txt
 
 $ # note the different madness levels in these examples
 $ awk -f blankify.awk grammified.txt | awk -f adlib.awk dict.txt - | awk -f fill.awk grammified.txt -
-Oh say can you mix, by the milk's early light, what so carefully we hailed at the twilight's last bubbling?
+Oh say can you MIX , by the MILK 's early light , what so CAREFULLY we hailed at the twilight 's last BUBBLING ?
 
 $ awk -f blankify.awk madness=5 grammified.txt | awk -f adlib.awk dict.txt - | awk -f fill.awk grammified.txt -
-Oh say can they serve, on top the sugar's early flour, what so proudly she hailed during the milk's crispy flipping?
+Oh say can THEY SERVE , ON TOP the SUGAR 's early FLOUR , what so proudly SHE hailed DURING the MILK 's CRISPY FLIPPING ?
 
 $ awk -f blankify.awk madness=0 grammified.txt | awk -f adlib.awk dict.txt - | awk -f fill.awk grammified.txt -
-Oh say can you see, by the dawn's early light, what so proudly we hailed at the twilight's last gleaming?
+Oh say can you see , by the dawn 's early light , what so proudly we hailed at the twilight 's last gleaming ?
 
 $ awk -f blankify.awk madness=10 grammified.txt | awk -f adlib.awk dict.txt - | awk -f fill.awk grammified.txt -
-yum mix serve she heat, during the salt's crispy sugar, he carefully immediately they smothered on top the milk's golden bubbling?
+YUM MIX SERVE SHE HEAT , DURING the SALT 's CRISPY SUGAR , HE CAREFULLY IMMEDIATELY THEY SMOTHERED ON TOP the MILK 's GOLDEN BUBBLING ?
 ```
 # Concepts
 ai-mad-libs consists of five components that are assembled together into several pipelines.
@@ -75,21 +75,21 @@ early : adjective
 light : noun (singular)
 ```
 ## dictionarize.awk
-Converts a `grammified text` into a `dictionary`.
+Converts a `grammified text` into a `dictionary`. All words are uppercased, to eliminate duplicates and to make it obvious in the output which words have been substituted.
 
 ## `dictionary` format
 The `dictionary` looks like this. This is an example dictionary created from a hypothetical pancake recipe:
 ```
 <dictionary>
-verb ending in ‘ing’ : flipping, bubbling
-adjective : crispy, golden, tasty
-noun (singular) : pancake, eggs, sugar, flour, milk, salt, syrup
-pronoun : he, she, they
-adverb : gently, carefully, immediately
-verb : beat, mix, fry, heat, serve
-past tense verb : browned, mixed, smothered
-preposition : on top, during
-exclamation : yum
+verb ending in ‘ing’ : FLIPPING, BUBBLING
+adjective : CRISPY, GOLDEN, TASTY
+noun (singular) : PANCAKE, EGGS, SUGAR, FLOUR, MILK, SALT, SYRUP
+pronoun : HE, SHE, THEY
+adverb : GENTLY, CAREFULLY, IMMEDIATELY
+verb : BEAT, MIX, FRY, HEAT, SERVE
+past tense verb : BROWNED, MIXED, SMOTHERED
+preposition : ON TOP, DURING
+exclamation : YUM
 </dictionary>
 ```
 ## blankify.awk
@@ -110,10 +110,10 @@ A `template` represents the position of the part of speech within the source tex
 When it contains blanks that have been filled from the dictionary, it looks like this:
 ```
 <template>
-24 : she : pronoun
-26 : carefully : abverb
-38 : eggs : noun
-43 : bubbling : verb ending in 'ing'
+24 : SHE : pronoun
+26 : CAREFULLY : abverb
+38 : EGGS : noun
+43 : BUBBLING : verb ending in 'ing'
 </template>
 ```
 In a filled template, the second "` : `" and the part of speech are ignored, but present for reference.
