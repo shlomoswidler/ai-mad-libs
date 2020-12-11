@@ -15,7 +15,8 @@ BEGIN {
 END { 
 	print "<dictionary>"
 	for (key in data) {
-		len = split(data[key], a, ", ")
+		upper = toupper(data[key])
+		len = split(upper, a, ", ")
 		split(nullstr, unis, "-")
 		for (el in a) {
 			it = a[el]
