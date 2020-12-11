@@ -10,11 +10,14 @@ Given an arbitrary source text, replace parts of speech with randomly chosen alt
 $ cat source.txt
 Oh say can you see, by the dawn's early light, what so proudly we hailed at the twilight's last gleaming?
 
-$ # create the dictionary from the recipe
-$ # grammify.sh pancakeRecipe.txt | awk -f dictionarize.awk - > dict.txt
+$ # generate the grammifier python script
+$ python ipynb2py.py --input grammify.ipynb
 
-$ # generate the mad libs
-$ # grammify.sh source.txt > grammified.txt
+$ # create the dictionary from the recipe
+$ # python grammify.py pancakeRecipe.txt | awk -f dictionarize.awk > dict.txt
+
+$ # invoke the grammifier to tag the parts of speech
+$ python grammify.py source.txt > grammified.txt
 
 $ # note the different madness levels in these examples
 $ awk -f blankify.awk grammified.txt | awk -f adlib.awk dict.txt - | awk -f fill.awk grammified.txt -
