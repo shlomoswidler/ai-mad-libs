@@ -1,11 +1,11 @@
 <dictionary>
-verb ending in ‘ing’ : flipping, bubbling
-adjective : crispy, golden, tasty
-noun (singular) : pancake, eggs, sugar, flour, milk, salt, syrup
-pronoun : he, she, they
-adverb : gently, carefully, immediately
-verb : beat, mix, fry, heat, serve
-past tense verb : browned, mixed, smothered
-preposition : on top, during
-exclamation : yum
+verb ending in ‘ing’ : FLIPPING, BUBBLING
+adjective : CRISPY, GOLDEN, TASTY
+noun (singular) : PANCAKE, EGGS, SUGAR, FLOUR, MILK, SALT, SYRUP
+pronoun : HE, SHE, THEY
+adverb : GENTLY, CAREFULLY, IMMEDIATELY
+verb : BEAT, MIX, FRY, HEAT, SERVE
+past tense verb : BROWNED, MIXED, SMOTHERED
+preposition : ON TOP, DURING
+exclamation : YUM
 </dictionary>
