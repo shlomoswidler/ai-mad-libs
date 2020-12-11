@@ -13,8 +13,9 @@ Oh say can you see, by the dawn's early light, what so proudly we hailed at the 
 $ # generate the grammifier python script
 $ python ipynb2py.py --input grammify.ipynb
 
-$ # create the dictionary from the recipe
-$ # python grammify.py pancakeRecipe.txt | awk -f dictionarize.awk > dict.txt
+$ # create the dictionary from the recipe (only necessary to create a new dictionary)
+$ # python grammify.py pancakeRecipe.txt > grammifiedRecipe.txt
+$ # python grammify.py grammifiedRecipe.txt | awk -f dictionarize.awk > dict.txt
 
 $ # invoke the grammifier to tag the parts of speech
 $ python grammify.py source.txt > grammified.txt
