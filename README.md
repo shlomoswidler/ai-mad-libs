@@ -5,6 +5,11 @@ Create a [mad libs](https://en.wikipedia.org/wiki/Mad_Libs) style text.
 
 Given an arbitrary source text, replace parts of speech with randomly chosen alternatives and show the result.
 
+### The Jupyter Notebook [`red-hat-libs.ipynb`](#red-hat-libs.ipynb) shows the creation of a new Mad Libs.
+To create a new dictionary, use the `grammify` and `dictionarize` steps shown in `example.sh`.
+
+The remaining `awk` files are legacy.
+
 # Example
 ```
 $ cat source.txt
