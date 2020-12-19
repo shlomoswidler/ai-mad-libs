@@ -5,10 +5,10 @@ Create a [mad libs](https://en.wikipedia.org/wiki/Mad_Libs) style text.
 
 Given an arbitrary source text, replace parts of speech with randomly chosen alternatives and show the result.
 
-### The Jupyter Notebook [`red-hat-libs.ipynb`](red-hat-libs.ipynb) shows the creation of a new Mad Libs.
-To create a new dictionary, use the `grammify` and `dictionarize` steps shown in `example.sh`.
+### The Jupyter Notebook [`red-hat-libs`](red-hat-libs.ipynb) shows the creation of a new Mad Libs.
+To create a new dictionary, use the `grammify` and `dictionarize` steps explained below and in [`example.sh`](example.sh).
 
-The remaining `awk` files are legacy.
+The remaining `awk` files are legacy - the steps have been reimplemented in Python in the [`red-hat-libs`](red-hat-libs.ipynb) Jupyter Notebook.
 
 # Example
 ```
@@ -19,8 +19,8 @@ $ # generate the grammifier python script
 $ python ipynb2py.py --input grammify.ipynb
 
 $ # create the dictionary from the recipe (only necessary to create a new dictionary)
-$ # python grammify.py pancakeRecipe.txt > grammifiedRecipe.txt
-$ # python grammify.py grammifiedRecipe.txt | awk -f dictionarize.awk > dict.txt
+$ python grammify.py pancakeRecipe.txt > grammifiedRecipe.txt
+$ python grammify.py grammifiedRecipe.txt | awk -f dictionarize.awk > dict.txt
 
 $ # invoke the grammifier to tag the parts of speech
 $ python grammify.py source.txt > grammified.txt
@@ -97,6 +97,13 @@ preposition : ON TOP, DURING
 exclamation : YUM
 </dictionary>
 ```
+
+## dictionaries.db
+The [`red-hat-libs`](red-hat-libs.sh) Jupyter Notebook reads a catalog of known dictionaries to present a drop-down allowing the user to choose one. The catalog is stored in the file `dictionaries.db`. Each line in this catalog points to a file in the project filesystem, along with a plain-text description. The format of each line is as follows:
+```
+filename : Plain-text description
+```
+
 ## blankify.awk
 Chooses words from within a `grammified text` to blank out. You can set the `madness` level from 0 (no blanks) to 10 (all possible blanks). If not specified, or an invalid value is specified, the default madness level of 2 is used.
 Outputs a `template`.
