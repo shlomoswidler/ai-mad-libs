@@ -6,10 +6,12 @@ BEGIN {
 	FS = " : "
 }
 { 
-	if ($2 in data) {
-		data[$2] = data[$2] ", " $1
-	} else {
-		data[$2] = $1
+	if ($2 != "stet") {
+		if ($2 in data) {
+			data[$2] = data[$2] ", " $1
+		} else {
+			data[$2] = $1
+		}
 	}
 }
 END { 
